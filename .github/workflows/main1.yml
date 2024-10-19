@@ -1,0 +1,17 @@
+name: check Java and node Versions
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  check-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Check Java Version
+        run: java -version
+      - name: Check node Version
+        run: node -v
+  
